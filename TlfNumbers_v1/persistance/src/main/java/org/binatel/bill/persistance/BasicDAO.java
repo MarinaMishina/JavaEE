@@ -23,6 +23,15 @@ public class BasicDAO {
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
     }
     
+    public Serializable addEntity(Object entity) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        Serializable id = session.save(entity);
+        session.getTransaction().commit();
+        return id;
+    }
+        
+    
     public Object getEntity(Class clazz, Serializable entityId) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();

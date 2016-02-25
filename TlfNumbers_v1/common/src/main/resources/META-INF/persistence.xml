@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="org.binatel.bill_common_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+  <persistence-unit name="TlfNumbers_v1PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <class>org.binatel.bill.common.ContractClient</class>
     <class>org.binatel.bill.common.TlfClientNumbers</class>
     <class>org.binatel.bill.common.TlfTarifClient</class>
@@ -10,10 +10,13 @@
     <class>org.binatel.bill.common.LangMsg</class>
     <class>org.binatel.bill.common.CompanyClient</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://utm5-test.dt.local:3306/binatel_bill?zeroDateTimeBehavior=convertToNull"/>
-      <property name="javax.persistence.jdbc.user" value="admin"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="%My!SqL9UP"/>
+      <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+      <property name="hibernate.connection.url">jdbc:mysql://utm5-test.dt.local:3306/binatel_bill</property>
+      <property name="hibernate.connection.username">user</property>
+      <property name="hibernate.connection.password">user</property>
+      <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+      <property name="show_sql">true</property>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
     </properties>
   </persistence-unit>
 </persistence>
