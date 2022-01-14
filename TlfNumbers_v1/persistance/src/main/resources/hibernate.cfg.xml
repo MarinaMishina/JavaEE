@@ -6,7 +6,7 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://utm5-test.dt.local:3306/binatel_bill?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">user</property>
-    <property name="hibernate.connection.password">password</property>
+    <property name="hibernate.connection.password">pass</property>
     <property name="show_sql">true</property>
     <property name="current_session_context_class">thread</property>
     
